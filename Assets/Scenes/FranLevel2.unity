@@ -3392,7 +3392,6 @@ GameObject:
   m_Component:
   - component: {fileID: 904911954}
   - component: {fileID: 904911953}
-  - component: {fileID: 904911955}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -3433,18 +3432,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &904911955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904911952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ebd2a2ad338b8b45886755be72a590c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1092384812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3864,16 +3851,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 904911953}
-    - target: {fileID: 3805125359593876479, guid: efb32322f902690419bbd1c89deb6bea,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 725740663}
     - target: {fileID: 8667489938067192881, guid: efb32322f902690419bbd1c89deb6bea,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3805125359593876479, guid: efb32322f902690419bbd1c89deb6bea,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 725740663}
     - target: {fileID: 791502017459570649, guid: efb32322f902690419bbd1c89deb6bea,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

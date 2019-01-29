@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -22,10 +23,15 @@ public class UIController : MonoBehaviour
         tryagainMenu.SetActive(true);
     }
 
-    public void DisplayPause()
+    public void DisplayOrHidePause()
     {
-        pauseMenu.SetActive(true);
-        congratulationsMenu.SetActive(false);
+        if(pauseMenu.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+        } else
+        {
+            pauseMenu.SetActive(true);
+        }
     }
 
     public void HideMenus()
@@ -37,5 +43,15 @@ public class UIController : MonoBehaviour
     internal void SetCongratulations(Sprite face)
     {
         congratulationsMenu.GetComponent<Image>().sprite = face;
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
+
+    public void LoadMainMenu()
+    {
+        MenuController.LoadLevelsMenu();
     }
 }

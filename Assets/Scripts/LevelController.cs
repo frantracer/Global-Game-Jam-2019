@@ -14,9 +14,6 @@ public class LevelController : MonoBehaviour
     private int s2 = 0; //1/3 more steps than our best
     [SerializeField] int s3 = 0; //our best
 
-
-    private bool levelPaused = false;
-
     [SerializeField] int steps = 0;
 
     // Start is called before the first frame update
@@ -31,8 +28,7 @@ public class LevelController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) == true)
         {
-            levelPaused = !levelPaused;
-            PauseOrUnpauseGame();
+            uiController.DisplayOrHidePause();
         }
         if (Input.GetKeyDown(KeyCode.R) == true)
         {
@@ -53,17 +49,6 @@ public class LevelController : MonoBehaviour
         EventManager.StopListening("die", LevelFail);
         EventManager.StopListening("step", UpdateStepCounter);
         EventManager.StopListening("finish", CheckLevelCompleted);
-    }
-
-    public void PauseOrUnpauseGame()
-    {
-        if(levelPaused)
-        {
-            uiController.DisplayPause();
-        } else
-        {
-            uiController.HideMenus();
-        }
     }
 
     public void LoadMainMenu()

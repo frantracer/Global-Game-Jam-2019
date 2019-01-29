@@ -5,39 +5,26 @@ using System.Collections.Generic;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager instance = null;
 
-    private Dictionary<string, UnityEvent> eventDictionary;
+    public Dictionary<string, UnityEvent> eventDictionary;
 
-    private static EventManager eventManager;
-
-    public static EventManager instance
+    private void Awake()
     {
-        get
+        if (instance == null)
         {
-            if (!eventManager)
+            if (eventDictionary == null)
             {
-                eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
-
-                if (!eventManager)
-                {
-                    Debug.LogError("There needs to be one active EventManger script on a GameObject in your scene.");
-                }
-                else
-                {
-                    eventManager.Init();
-                }
+                eventDictionary = new Dictionary<string, UnityEvent>();
             }
-
-            return eventManager;
+            instance = this;
         }
-    }
-
-    void Init()
-    {
-        if (eventDictionary == null)
+        else if (instance != this)
         {
-            eventDictionary = new Dictionary<string, UnityEvent>();
+            Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public static void StartListening(string eventName, UnityAction listener)
@@ -57,7 +44,7 @@ public class EventManager : MonoBehaviour
 
     public static void StopListening(string eventName, UnityAction listener)
     {
-        if (eventManager == null) return;
+        if (instance == null) return;
         UnityEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {

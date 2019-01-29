@@ -23,4 +23,9 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneMenuSceneName, LoadSceneMode.Single);
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }
