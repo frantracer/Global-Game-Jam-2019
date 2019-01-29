@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     int playersReadyCounter = 0;
     bool moveEnabled = true;
 
+    private Vector2 input = Vector2.zero;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,14 +25,18 @@ public class PlayerManager : MonoBehaviour
 
     void OnDisable()
     {
-        EventManager.StartListening("ready", PlayerIsReady);
+        EventManager.StopListening("ready", PlayerIsReady);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 input = new Vector2();
-        input.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if(this.input == Vector2.zero)
+        {
+            SetInput(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        }
+
+        Vector2 input = this.input;
 
         if(Mathf.Abs(input.x) > Mathf.Abs(input.y))
         {
@@ -127,6 +133,13 @@ public class PlayerManager : MonoBehaviour
         {
             player.steps = stepsArray.Max();
         }
+
+        this.input = Vector2.zero;
+    }
+
+    public void SetInput(Vector2 input)
+    {
+        this.input = input;
     }
 
     public PlayerController[] GetPlayers()

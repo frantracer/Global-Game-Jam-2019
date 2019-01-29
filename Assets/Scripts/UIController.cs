@@ -11,6 +11,13 @@ public class UIController : MonoBehaviour
     public GameObject congratulationsMenu;
     public GameObject tryagainMenu;
 
+    private PlayerManager playerManager;
+
+    private void Start()
+    {
+        playerManager = GameObject.Find("Characters").GetComponent<PlayerManager>();
+    }
+
     public void DisplayCongratulations()
     {
         pauseMenu.SetActive(false);
@@ -53,5 +60,26 @@ public class UIController : MonoBehaviour
     public void LoadMainMenu()
     {
         MenuController.LoadLevelsMenu();
+    }
+
+    public void SendInput(string direction)
+    {
+        Vector2 input = Vector2.zero;
+        switch(direction)
+        {
+            case "up":
+                input = Vector2.up;
+                break;
+            case "down":
+                input = Vector2.down;
+                break;
+            case "left":
+                input = Vector2.left;
+                break;
+            case "right":
+                input = Vector2.right;
+                break;
+        }
+        playerManager.SetInput(input);
     }
 }
