@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 1e289470893d6a044a260ee61aa55937
+  - enabled: 1
+    path: Assets/Scenes/ThalesLevel2.unity
+    guid: ffd9e5647e7a6f440b92cb81164b4e1d
+  - enabled: 1
+    path: Assets/Scenes/ThalesLevel1.unity
+    guid: eb9a13410f9d68448adba25e81b3ac2a
+  - enabled: 1
+    path: Assets/Scenes/ThalesLevel3.unity
+    guid: e9805a6706cbbda4c95c90586802ddbf
+  - enabled: 1
+    path: Assets/Scenes/ThalesLevel4.unity
+    guid: 884da8964b746d746a180979b04ae8be
+  - enabled: 1
+    path: Assets/Scenes/ThalesLevel5.unity
+    guid: 55c4557a1212d1a4c859363b37ee945f
+  - enabled: 1
+    path: Assets/Scenes/FranLevel1.unity
+    guid: f11dfbff7530176499b1bf81362be880
+  - enabled: 1
+    path: Assets/Scenes/FranLevel2.unity
+    guid: aea641595362147438bc06a2d7d677d4
+  - enabled: 1
+    path: Assets/Scenes/FranLevel3.unity
+    guid: 6a2f641146f481341a5a5d183d635098
+  - enabled: 0
+    path: Assets/Scenes/SilvaLevel1.unity
+    guid: 8c2d939b229f29941aab3d8cb33f9324
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/SilvaLevel1.unity
+    guid: 8c2d939b229f29941aab3d8cb33f9324
+  - enabled: 0
+    path: Assets/Scenes/SilvaLevel2.unity
+    guid: c35568cf3bfec504783b3602b77bdf3f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  m_configObjects: {}
