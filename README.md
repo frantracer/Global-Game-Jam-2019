@@ -1,6 +1,8 @@
 # Global-Game-Jam-2019
 Puzzle game developed in the Global Game Jam 2019, which topic was "What home means to you"
 
+<img src="https://github.com/frantracer/Global-Game-Jam-2019/assets/10522656/45093f9c-9233-40b2-85a9-dc3d2185837b" width="350">
+
 # You can play it
 **Reunite the whole family in the blue zone** next to the couch, so they can be together!
 
